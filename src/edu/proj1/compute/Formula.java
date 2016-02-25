@@ -153,8 +153,5 @@ public class Formula {
 		return Math.log(input) / Math.log(base);
 	}
 	
-	public static void main(String [] args) {
-		System.out.println(log(-1185.717, 10));
-	}
 	
 }

@@ -1,13 +1,11 @@
 package edu.proj1.test;
 
-import edu.proj1.compute.Formula;
 import edu.proj1.main.FireDangerSystem;
 
 public class Test {
-	/**
-	 * static boolean isSnow, isRain;
-	static double grass=0, timber=0, bui=0, ffm=0, adfm=0, fli=0, df=0, dryWet = 12.2, buo = 10, precip = 1, wind=20;
-	*/
+	/***
+	 * Static integer to keep track of the test number
+	 * **/
 	static int testNo = 0;
 	 
 	/*******
@@ -15,6 +13,8 @@ public class Test {
 	 * ********/
 	public static void main(String[] args) {
 		FireDangerSystem fds = new FireDangerSystem();
+		fds.dryWet = 4.6; fds.buo = 0.01; fds.precip = 0.001; fds.wind=5;
+		
 		fds.isSnow = true;
 		fds.isRain = false;
 		fds.fireDangerStart();
@@ -33,6 +33,7 @@ public class Test {
 		
 		fds.dryWet = 30;
 		fds.fireDangerStart();
+		
 	}
 	
 }

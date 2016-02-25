@@ -4,12 +4,25 @@ import java.util.Scanner;
 
 import edu.proj1.compute.Formula;
 
+/********
+ * Class for executing a run through of the fire danger system
+ * ********/
 public class FireDangerSystem {
 	public boolean isSnow, isRain;
 	public double grass=0, timber=0, bui=0, ffm=0, adfm=0, fli=0, df=0, dryWet = 0, buo = 0, precip = 0, wind=0;
 	
 	public FireDangerSystem() {}
 	
+	/*****
+	 * Command line entry for the fire danger system. Can be executed via prompts or straight from command line<br>
+	 * @param args :<br>
+	 * args[0] = 1 or 0 for whether it's snowing<br>
+	 * args[1] = 1 or 0 for whether it's raining<br>
+	 * args[2] = dry-wet temp<br>
+	 * args[3] = yesterday's buildup<br>
+	 * args[4] = precipitation in inches<br>
+	 * args[5] = wind speed in mph
+	 * *****/
 	public static void main(String [] args) {
 		FireDangerSystem fds = new FireDangerSystem();
 		if(args == null || args.length < 6) {
@@ -47,6 +60,9 @@ public class FireDangerSystem {
 		fds.fireDangerStart();
 	}
 	
+	/*****
+	 * Method that goes through a run of the fire danger system. Outputs are pushed to the console at termination
+	 * *******/
 	public void fireDangerStart() {
 		if(isSnow) {
 			grass = 0;
