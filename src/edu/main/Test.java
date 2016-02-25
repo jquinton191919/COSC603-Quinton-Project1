@@ -50,10 +50,6 @@ public class Test {
 				bui = Formula.getBuildupIndex(buo, precip);
 			}
 			
-			if(testNo > 2) {
-				System.out.println("wha?");
-			}
-			
 			bui += df;
 			adfm = Formula.getAdjustedFuelMoisture(ffm, bui);
 			if(ffm > 33) {
