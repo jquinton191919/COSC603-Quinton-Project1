@@ -45,6 +45,8 @@ public class FireDangerSystem {
 			System.out.println("What is the wind speed? ");
 			fds.wind = Double.parseDouble(input.nextLine());
 			
+			input.close();
+			
 		}
 		
 		else{
