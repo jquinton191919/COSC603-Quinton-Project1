@@ -1,4 +1,4 @@
-package edu.main;
+package edu.proj1.test;
 
 import edu.proj1.compute.Formula;
 
