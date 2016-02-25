@@ -1,82 +1,38 @@
 package edu.proj1.test;
 
 import edu.proj1.compute.Formula;
+import edu.proj1.main.FireDangerSystem;
 
 public class Test {
-	static boolean isSnow, isRain;
+	/**
+	 * static boolean isSnow, isRain;
 	static double grass=0, timber=0, bui=0, ffm=0, adfm=0, fli=0, df=0, dryWet = 12.2, buo = 10, precip = 1, wind=20;
+	*/
 	static int testNo = 0;
-
+	 
+	/*******
+	 * Main method to test all paths in flow control
+	 * ********/
 	public static void main(String[] args) {
-		isSnow = true;
-		isRain = false;
-		test();
+		FireDangerSystem fds = new FireDangerSystem();
+		fds.isSnow = true;
+		fds.isRain = false;
+		fds.fireDangerStart();
 		
-		isRain = true;
-		test();
+		fds.isRain = true;
+		fds.fireDangerStart();
 		
-		isSnow = false;
-		test();
+		fds.isSnow = false;
+		fds.fireDangerStart();
 		
-		isRain = false;
-		test();
+		fds.isRain = false;
+		fds.fireDangerStart();
 		
-		isRain = true;
-		test();
+		fds.isRain = true;
+		fds.fireDangerStart();
 		
-		dryWet = 30;
-		test();
+		fds.dryWet = 30;
+		fds.fireDangerStart();
 	}
 	
-	public static void test() {
-		System.out.println("Test number " + ++testNo);
-		if(isSnow) {
-			grass = 0;
-			timber = 0;
-			if(isRain) {
-				bui = Formula.getBuildupIndex(buo, precip);
-			}
-		}
-		
-		else {
-			ffm = Formula.getFineFuelMoisture(dryWet);
-			df = Formula.getDryingFactor(ffm); 
-			
-			//adjust fine fule for herb stage
-			int [] hStage = {5, 10};
-			ffm += hStage[ 0 ];
-			
-			if(isRain) {
-				bui = Formula.getBuildupIndex(buo, precip);
-			}
-			
-			bui += df;
-			adfm = Formula.getAdjustedFuelMoisture(ffm, bui);
-			if(ffm > 33) {
-				grass = 1;
-				timber = 1;
-			}
-			
-			else{
-				grass = Formula.getFineFuelSpread(wind, ffm);
-				timber = Formula.getTimberSpreadIndex(wind, adfm);
-				
-				if(grass == 0 && timber == 0) {
-					//do nothing
-				}
-				else{
-					fli = Formula.getFireLoadIndex(timber, bui);
-				}
-				
-			}
-		}
-		
-		System.out.println("Buildup Index: " + bui + "\n" +
-							"Fine Fuel Spread: " + grass + "\n" +
-							"Fine Fuel Moisture: " + ffm + "\n" +
-							"Adjusted Fuel Moisture: " + adfm + "\n" +
-							"Timber Spread Index: " + timber + "\n" +
-							"Fire Load Index: " + fli + "\n");
-			
-	}
 }
