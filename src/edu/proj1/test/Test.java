@@ -34,6 +34,9 @@ public class Test {
 		fds.dryWet = 30;
 		fds.fireDangerStart();
 		
+		fds.dryWet = 5;
+		fds.fireDangerStart();
+		
 	}
 	
 }
