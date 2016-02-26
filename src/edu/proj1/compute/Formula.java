@@ -32,11 +32,11 @@ public class Formula {
 			a = 30.0;
 			b = -.1859;
 		}
-		else if(dryWet < 12.5 && dryWet > 4.4) {
+		else if(dryWet < 12.5 && dryWet >= 4.5) {
 			a = 19.2;
 			b = -.0859;
 		}
-		else if(dryWet < 27.5 && dryWet > 12.4) {
+		else if(dryWet < 27.5 && dryWet >= 12.5) {
 			a = 13.8;
 			b = -.0579;
 		}
@@ -155,6 +155,4 @@ public class Formula {
 	private static double log(double input, int base){
 		return Math.log(input) / Math.log(base);
 	}
-	
-	
 }
