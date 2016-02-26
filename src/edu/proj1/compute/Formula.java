@@ -96,12 +96,15 @@ public class Formula {
 	 * *********/
 	public static double getFireLoadIndex(double tsi, double bui) {
 		double exponent;
+		tsi = (tsi < 0) ? 0 : tsi;
+		bui = (bui < 0) ? 0 : bui;
 		exponent = 1.75 * ( log(tsi, 10) + .32 * (log(bui, 10) - 1.64) );
 		return Math.pow(10,exponent);
 	}
 	
 	/******
 	 * Returns the drying factor based on the Fine Fuel Moisture
+	 * @param ffm - Fine Fuel Moisture value
 	 * *******/
 	public static int getDryingFactor(double ffm) {
 		if(ffm > 16.0){
