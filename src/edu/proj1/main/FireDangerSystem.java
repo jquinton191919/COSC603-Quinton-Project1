@@ -53,9 +53,9 @@ public class FireDangerSystem {
 				fds.isSnow = args[0].equals("1") ? true : false;
 				fds.isRain = args[1].equals("1") ? true : false;
 				fds.dryWet = Double.parseDouble(args[2]);
-				fds.buo = Double.parseDouble(args[2]);
-				fds.precip = Double.parseDouble(args[2]);
-				fds.wind = Double.parseDouble(args[2]);
+				fds.buo = Double.parseDouble(args[3]);
+				fds.precip = Double.parseDouble(args[4]);
+				fds.wind = Double.parseDouble(args[5]);
 		}
 		
 
