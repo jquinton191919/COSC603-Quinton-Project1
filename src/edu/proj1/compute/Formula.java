@@ -1,4 +1,4 @@
-package edu.proj1.compute;
+package edu.proj1.compute; 
 
 /****
  * Static class for the various computations related to the Fire Danger Legacy System
